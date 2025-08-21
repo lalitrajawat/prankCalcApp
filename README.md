@@ -18,7 +18,7 @@ A simple calculator built with **HTML, CSS & React**… but wait 👀, it has a 
 ## 🎥 Demo  
 Here’s a sneak peek 👇  
 
-![Calculator Screenshot](./screenshot.png)  
+![Calculator Screenshot](./Screenshot.png) 
 *(add your own screenshot or gif here)*  
 
 ---
