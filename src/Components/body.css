@@ -1,0 +1,115 @@
+:root {
+    --bg: #0f1220;
+    --panel: #171a2b;
+    --panel-2: #1f2340;
+    --text: #e9ecf1;
+    --muted: #9097a6;
+    --accent: #7c5cff;
+    --accent-2: #00d3a7;
+    --danger: #ff5c7a;
+    --shadow: 0 20px 60px rgba(0, 0, 0, .35);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: radial-gradient(1200px 600px at 70% -20%, #2a2f55 0%, transparent 60%), var(--bg);
+    color: var(--text);
+}
+
+.calc {
+    width: min(360px, 92vw);
+    margin: 6vh auto;
+    padding: 18px;
+    background: linear-gradient(180deg, var(--panel-2), var(--panel));
+    border: 1px solid rgba(255, 255, 255, .06);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+}
+
+.display {
+    background: rgba(0, 0, 0, .2);
+    border: 1px solid rgba(255, 255, 255, .06);
+    border-radius: 16px;
+    padding: 14px 14px 10px 14px;
+    min-height: 84px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.history {
+    min-height: 20px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.current {
+    font-size: 2.4rem;
+    line-height: 1.1;
+    text-align: right;
+    font-weight: 700;
+    word-break: break-all;
+}
+
+.keys {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.keys button {
+    border: none;
+    padding: 16px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 14px;
+    backdrop-filter: blur(4px);
+    cursor: pointer;
+    transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .25);
+}
+
+.keys button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, .3);
+}
+
+.keys button:active {
+    transform: translateY(1px) scale(.99);
+}
+
+.keys .op {
+    background: linear-gradient(180deg, rgba(124, 92, 255, .25), rgba(124, 92, 255, .15));
+    border-color: rgba(124, 92, 255, .45);
+}
+
+.keys .eq {
+    background: linear-gradient(180deg, rgba(0, 211, 167, .25), rgba(0, 211, 167, .15));
+    border-color: rgba(0, 211, 167, .45);
+}
+
+.keys .wide {
+    grid-column: span 2;
+}
+
+@media (max-width:340px) {
+    .current {
+        font-size: 2rem;
+    }
+}
